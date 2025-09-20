@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Support Smart Task — Donate KOII</title>
+  <meta name="description" content="Support Smart Task (Smart Open Network). Donate KOII, ETH or USDT to help build decentralized creator monetization and gameplay validation." />
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#22c55e;
+      --glass: rgba(255,255,255,0.03);
+      --maxw:900px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071021);color:#e6eef6}
+    .wrap{max-width:var(--maxw);margin:32px auto;padding:28px;}
+    .card{background:linear-gradient(180deg,var(--card),#06111b);border-radius:14px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px);}
+    header{display:flex;gap:16px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#134E4A,#065f46);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:18px}
+    h1{margin:0;font-size:24px}
+    p.lead{color:var(--muted);margin:8px 0 18px;line-height:1.45}
+    .grid{display:grid;grid-template-columns: 1fr 320px;gap:18px}
+    @media (max-width:800px){.grid{grid-template-columns:1fr} .right{order:-1}}
+    .donation{background:var(--glass);padding:18px;border-radius:10px}
+    .wallet{background:#071826;border-radius:8px;padding:12px;margin:10px 0;display:flex;gap:12px;align-items:center;border:1px solid rgba(255,255,255,0.03)}
+    .addr{font-family:monospace;font-size:13px;color:#dff7e6;word-break:break-all}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#16a34a);color:#03210f;box-shadow:0 6px 18px rgba(34,197,94,0.12)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .small{font-size:13px;color:var(--muted)}
+    .qr{width:120px;height:120px;border-radius:8px;background:#071827;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.03)}
+    .share{display:flex;gap:8px;flex-wrap:wrap}
+    .progress{height:12px;background:rgba(255,255,255,0.04);border-radius:10px;overflow:hidden;margin-top:12px}
+    .progress > i{display:block;height:100%;background:linear-gradient(90deg,#10b981,#06b6d4);width:0%}
+    footer{color:var(--muted);font-size:13px;margin-top:18px;text-align:center}
+    .muted{color:var(--muted)}
+    .copyIcon{opacity:.86}
+    .section-title{font-weight:700;margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="logo">SON</div>
+        <div>
+          <h1>Support Smart Task</h1>
+          <p class="lead">Help Smart Open Network build Smart Task — a decentralized system to monetize creators and validate gameplay. Donate KOII or other tokens and spread the word.</p>
+        </div>
+      </header>
+
+      <div style="height:18px"></div>
+
+      <div class="grid">
+        <!-- left -->
+        <div>
+          <div class="donation">
+            <div class="section-title">Donate Crypto</div>
+            <p class="small muted">Send funds to the addresses below. Click <strong>Copy</strong> or scan the QR to paste into your wallet app.</p>
+
+            <!-- KOII -->
+            <div class="wallet">
+              <div style="flex:1">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-weight:700">KOII (Koii)</div>
+                  <button class="btn btn-ghost" onclick="copyAddr('koiiAddr')">Copy</button>
+                </div>
+                <div class="addr" id="koiiAddr">YOUR_KOII_WALLET_ADDRESS_HERE</div>
+              </div>
+              <div class="qr" title="KOII QR">
+                <img id="koiiQR" src="" alt="QR" style="width:100%;height:100%;object-fit:cover;border-radius:6px"/>
+              </div>
+            </div>
+
+            <!-- ETH -->
+            <div class="wallet">
+              <div style="flex:1">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-weight:700">Ethereum (ETH)</div>
+                  <button class="btn btn-ghost" onclick="copyAddr('ethAddr')">Copy</button>
+                </div>
+                <div class="addr" id="ethAddr">YOUR_ETH_WALLET_ADDRESS_HERE</div>
+              </div>
+              <div class="qr" title="ETH QR">
+                <img id="ethQR" src="" alt="QR" style="width:100%;height:100%;object-fit:cover;border-radius:6px"/>
+              </div>
+            </div>
+
+            <!-- USDT -->
+            <div class="wallet">
+              <div style="flex:1">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-weight:700">USDT (ERC20)</div>
+                  <button class="btn btn-ghost" onclick="copyAddr('usdtAddr')">Copy</button>
+                </div>
+                <div class="addr" id="usdtAddr">YOUR_USDT_WALLET_ADDRESS_HERE</div>
+              </div>
+              <div class="qr" title="USDT QR">
+                <img id="usdtQR" src="" alt="QR" style="width:100%;height:100%;object-fit:cover;border-radius:6px"/>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <button class="btn btn-primary" onclick="openWalletLinks()">Open Wallet</button>
+              <button class="btn btn-ghost" onclick="sharePage()">Share</button>
+            </div>
+
+            <div style="margin-top:18px">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div class="small muted">Goal</div>
+                <div class="small muted">Raised: <span id="raised">0</span> / <span id="goal">500</span> KOII</div>
+              </div>
+              <div class="progress" aria-hidden="true">
+                <i id="progressBar" style="width:0%"></i>
+              </div>
+            </div>
+
+            <p class="small muted" style="margin-top:12px">Tip: Add this page to your project's README, social bios and GitHub pages to drive donations.</p>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <div class="donation">
+            <div class="section-title">Why donate?</div>
+            <ul class="small muted">
+              <li>Enable sustainable creator monetization on Koii.</li>
+              <li>Support decentralized validation for gameplay & content.</li>
+              <li>Fund development, bounties, and community events.</li>
+            </ul>
+
+            <div style="height:12px"></div>
+            <div class="section-title">How your donation is used</div>
+            <p class="small muted">Core development, hosting, airdrops for early testers, and bounties for validators and creators.</p>
+          </div>
+        </div>
+
+        <!-- right -->
+        <aside class="right" style="padding-left:8px">
+          <div class="card" style="padding:16px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="width:64px;height:64px;border-radius:10px;background:linear-gradient(180deg,#0ea5a4,#047857);display:flex;align-items:center;justify-content:center;color:white;font-weight:700">SON</div>
+              <div>
+                <div style="font-weight:800">Smart Open Network</div>
+                <div class="muted small">Smart Task — Creator monetization & gameplay validation</div>
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div class="small muted">Quick share</div>
+              <div class="small muted">Increase awareness</div>
+            </div>
+
+            <div style="height:10px"></div>
+
+            <div class="share">
+              <a class="btn btn-primary" href="#" onclick="shareX()">Share on X</a>
+              <a class="btn btn-primary" href="#" onclick="shareTelegram()">Telegram</a>
+              <a class="btn btn-ghost" href="#" onclick="copyLink()">Copy Link</a>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="section-title">Contact</div>
+            <div class="small muted">
+              <div>Info: <a href="mailto:info@smartopen.net" style="color:var(--accent)">info@smartopen.net</a></div>
+              <div>Donate / Press: <a href="mailto:info@smartopen.net" style="color:var(--accent)">info@smartopen.net</a></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        © <span id="year"></span> Smart Open Network · Built on Koii · <span class="muted">Thank you for your support</span>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // === Replace with your own addresses ===
+    const KOII_ADDR = "YOUR_KOII_WALLET_ADDRESS_HERE";
+    const ETH_ADDR  = "YOUR_ETH_WALLET_ADDRESS_HERE";
+    const USDT_ADDR = "YOUR_USDT_WALLET_ADDRESS_HERE";
+
+    // Page initialisation
+    document.getElementById('year').innerText = new Date().getFullYear();
+    document.getElementById('koiiAddr').innerText = KOII_ADDR;
+    document.getElementById('ethAddr').innerText  = ETH_ADDR;
+    document.getElementById('usdtAddr').innerText = USDT_ADDR;
+
+    // Generate QR images using Google Chart API (simple & widely available)
+    // Format: bitcoin: style or plain address, wallets will usually accept raw addresses.
+    // KOII does not have a widely-standardized URI format — we show address QR.
+    function qrUrlFromText(text) {
+      return "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=" + encodeURIComponent(text) + "&choe=UTF-8";
+    }
+    document.getElementById('koiiQR').src = qrUrlFromText(KOII_ADDR);
+    document.getElementById('ethQR').src  = qrUrlFromText("ethereum:" + ETH_ADDR);
+    document.getElementById('usdtQR').src = qrUrlFromText("ethereum:" + USDT_ADDR + "?token=USDT");
+
+    // Copy address helper
+    function copyAddr(id) {
+      const t = document.getElementById(id).innerText;
+      if (!navigator.clipboard) {
+        alert("Copy not supported in this browser. Please manually select and copy.");
+        return;
+      }
+      navigator.clipboard.writeText(t).then(() => {
+        const btn = event.target;
+        btn.innerText = "Copied";
+        setTimeout(()=> btn.innerText = "Copy", 1500);
+      });
+    }
+
+    // Share helpers
+    function shareX(){
+      const text = encodeURIComponent("I just supported Smart Task on Smart Open Network — donate: " + window.location.href);
+      window.open("https://twitter.com/intent/tweet?text=" + text, "_blank");
+    }
+    function shareTelegram(){
+      const text = encodeURIComponent("Support Smart Task — donate at " + window.location.href);
+      window.open("https://t.me/share/url?url=" + encodeURIComponent(window.location.href) + "&text=" + text, "_blank");
+    }
+    function copyLink(){
+      navigator.clipboard.writeText(window.location.href).then(()=> alert("Link copied to clipboard"));
+    }
+    function sharePage(){
+      if (navigator.share) {
+        navigator.share({
+          title: "Support Smart Task",
+          text: "Support Smart Task — donate to help build a decentralised creator economy.",
+          url: window.location.href
+        }).catch(()=>{/* user cancelled */});
+      } else {
+        copyLink();
+      }
+    }
+    function openWalletLinks(){
+      // Try to open common deep links for wallets (best-effort)
+      // These will only work if user has supporting wallet apps installed.
+      window.open("https://wallet.koii.network/send?address=" + encodeURIComponent(KOII_ADDR), "_blank");
+    }
+
+    // Simple progress simulation (replace with real values or a small backend later)
+    // If you have an API to provide raised amount, fetch and update instead.
+    const goal = 500; // KOII
+    document.getElementById('goal').innerText = goal;
+    let raised = 0;
+    function updateProgress(val){
+      raised = val;
+      document.getElementById('raised').innerText = raised;
+      const pct = Math.min(100, Math.round((raised / goal) * 100));
+      document.getElementById('progressBar').style.width = pct + "%";
+    }
+
+    // Example: fetch raised from a JSON endpoint (uncomment & set your endpoint)
+    // fetch('/api/raised.json').then(r=>r.json()).then(data => updateProgress(data.raised || 0)).catch(()=> updateProgress(0));
+    updateProgress(0); // initial
+
+    // Copy helper for share button generic use
+    function copyAddrGeneric(text) {
+      navigator.clipboard.writeText(text).then(()=> alert("Copied"));
+    }
+  </script>
+</body>
+</html>
